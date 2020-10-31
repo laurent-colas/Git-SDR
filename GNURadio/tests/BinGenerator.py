@@ -47,7 +47,15 @@ class Frame:
         self.data = [Pre, Pre, Sta, Typ]
         
     def Add(self, Address, Sample):
-        pass
+        # Create address and sample object
+        addr = Words()
+        samp = Words()
+        # Convert Hexadecimal Values to integers
+        addr.byte = int(Address, 16)
+        samp.byte = int(Sample, 16)
+        # Append Frame data with the new Sample and its adress
+        self.data.append(addr)
+        self.data.append(samp)
     
     def toStream(self):
         stream =[]
@@ -75,4 +83,5 @@ class Frame:
             
 # Main test
 test = Frame()
+test.Add("69", "42")
 test.toFile("filename", 0)
