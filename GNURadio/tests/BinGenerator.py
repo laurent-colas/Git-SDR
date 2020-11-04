@@ -84,4 +84,6 @@ class Frame:
 # Main test
 test = Frame()
 test.Add("69", "42")
-test.toFile("filename", 0)
+test.Add("E5", "FC")
+test.Add("75", "80")
+test.toFile("filename", 4)
